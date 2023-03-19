@@ -1,0 +1,59 @@
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  height: 50px;
+
+  .userInfo {
+    display: flex;
+    .avatar {
+      border-radius: 30px;
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+    }
+    .name {
+      margin: 0;
+      font-weight: 900;
+      font-family: "Merriweather", serif;
+      margin-left: 15px;
+      margin-top: 5px;
+      margin-left: 0;
+      color: #182170;
+    }
+  }
+  .emailBox {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 3px;
+
+    .at {
+      color: rgba(0, 0, 0, 0.3);
+
+      font-size: 18px;
+      font-weight: 900;
+      margin-right: 2px;
+
+      path {
+        fill: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  .add {
+    font-size: 38px;
+    color: #000000;
+    opacity: 0.3;
+    margin-right: 10px;
+
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

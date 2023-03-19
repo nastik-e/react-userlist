@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.scss";
+import Users from "./Users/Users";
 
 function App() {
+
+  const [users, setUsers] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [searchValue, setSearchValue] = useState('');
+  
+  useEffect(() => {
+    fetch("https://reqres.in/api/users")
+      .then((res) => res.json())
+      .then((json) => {
+        setUsers(json.data);
+      })
+      .catch((err) => {
+        console.warn(err);
+        alert("Mistake when fetching users");
+      }).finally(() => setLoading(false));
+  }, []);
+const onChangeSearchValue =(event)=> {
+  setSearchValue(event.target.value.toLowerCase())
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Users items={users} isLoading={isLoading} onChangeSearchValue={onChangeSearchValue} searchValue={searchValue}/>
+      {/* <Success/> */}
     </div>
   );
 }
