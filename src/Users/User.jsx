@@ -1,6 +1,14 @@
 import "./User.scss";
 
-const User = ({ id, email, first_name, last_name, avatar }) => {
+const User = ({
+  id,
+  email,
+  first_name,
+  last_name,
+  avatar,
+  onClickInvite,
+  isInvited,
+}) => {
   return (
     <li className="user">
       <div className="userInfo">
@@ -15,7 +23,9 @@ const User = ({ id, email, first_name, last_name, avatar }) => {
           </p>
         </div>
       </div>
-      <div onClick={} className="add">+</div>
+      <div className="add" onClick={() => onClickInvite(id)}>
+        {isInvited ? "-" : "+"}
+      </div>
     </li>
   );
 };

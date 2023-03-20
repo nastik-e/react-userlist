@@ -8,5 +8,24 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  
+  .buttonOrange {
+    background-color: rgb(251, 80, 0);
+    padding: 16px 15px;
+    border-radius: 15px;
+    font-size: 24px;
+    color: #fff;
+    border: 0;
+    outline: none;
+    box-shadow: 0 7px 10px rgba(251, 80, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background-color: rgb(255, 97, 24);
+    }
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: none;
+    }
+  }
 }
